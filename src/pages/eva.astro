@@ -1,0 +1,96 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Walk Studios | Project Eva Beckemyer"
+  description="Eva Beckemyer portfolio — a mixed media collage artist from Memphis, TN who needed a digital space to curate her work."
+  canonical="/eva"
+  darkNav={true}
+>
+  <div class="bg-black overflow-hidden">
+    <div class="pt-28 px-6 pb-4">
+      <a
+        href="/projects"
+        class="text-sm font-medium text-walk-red hover:text-white transition-colors duration-150"
+      >
+        ← All Projects
+      </a>
+    </div>
+    <!-- Header -->
+    <div class="bg-black text-white grid grid-cols-1 md:grid-cols-4 mx-4 md:mx-9">
+      <div class="col-span-4">
+        <p class="md:mt-40 lg:mt-8 text-white text-5xl md:text-9xl">
+          EVA<br />BECKEMYER
+        </p>
+        <p class="text-walk-gray text-5xl md:text-9xl">PORTFOLIO</p>
+      </div>
+      <div class="col-start-3 col-span-2 text-2xl md:text-5xl mb-4 mt-5 md:mr-10">
+        <p class="text-white">
+          Eva is a mixed media collage artist from Memphis, TN, who needed a
+          digital space to curate her work.
+        </p>
+        <p class="mt-4 text-sm uppercase tracking-widest text-gray-400">Stack: Next.js · Tailwind · Netlify</p>
+      </div>
+    </div>
+
+    <!-- Video section -->
+    <div class="bg-black py-20 flex flex-col items-center px-8">
+      <video
+        autoplay
+        muted
+        loop
+        controls
+        playsinline
+        class="md:max-w-screen lg:max-w-screen-md"
+      >
+        <source src="/Images/take6.mp4" type="video/mp4" />
+      </video>
+      <p class="text-xs text-white p-2 md:pb-4 md:text-xl italic text-center">
+        To highlight Eva's artwork we used a minimalist design to
+        replicate the feeling of a gallery wall.
+      </p>
+    </div>
+
+    <!-- Mockup + design system -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 bg-white py-8 px-8">
+      <div class="col-span-2 flex flex-col items-center">
+        <img
+          class="shadow-lg mb-4"
+          width="600"
+          height="600"
+          src="/Images/mockup_re.webp"
+          alt="Mobile mockup of Eva Beckemyer portfolio site"
+          loading="lazy"
+        />
+        <p class="text-xs text-black p-2 md:pb-4 md:text-xl italic text-center">
+          fully responsive for mobile devices
+        </p>
+      </div>
+      <div class="col-span-2 flex flex-col items-center">
+        <img
+          class="shadow-lg mb-4"
+          width="600"
+          height="600"
+          src="/Images/design_system_re.png"
+          alt="Custom design system for Eva Beckemyer portfolio"
+          loading="lazy"
+        />
+        <p class="text-xs text-black p-2 md:pb-4 md:text-xl italic text-center">
+          custom design system
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-white">
+    <div class="max-w-4xl mx-auto px-6 py-16 flex justify-between items-center border-t border-gray-200">
+      <a href="/looktocook" class="text-sm font-medium text-gray-500 hover:text-black transition-colors duration-150">
+        ← Look to Cook
+      </a>
+      <a href="/projects" class="text-sm font-medium text-gray-500 hover:text-black transition-colors duration-150">
+        All Projects →
+      </a>
+    </div>
+  </div>
+</BaseLayout>

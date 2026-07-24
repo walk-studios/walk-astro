@@ -1,0 +1,112 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="About Walk Studios | Memphis Web Design Studio"
+  description="Walk Studios is a one-person studio run by Brian Peterson — CS degree, PMP certified, and former construction math instructor. Senior technical depth without agency overhead."
+  canonical="/about"
+>
+  <div class="pt-32 pb-16 min-h-screen">
+
+    <!-- Top logo watermark + tagline -->
+    <div class="relative">
+      <img
+        class="w-screen left-1/2 transform -translate-x-1/2 opacity-10"
+        alt="crosswalk logo watermark"
+        src="/Images/Walk_Logo_2.svg"
+        width="1200"
+        height="400"
+        loading="lazy"
+      />
+      <div class="absolute inset-0 flex flex-row items-center mt-28 md:mt-0">
+        <div class="md:mt-12 grid grid-cols-1">
+          <p class="mt-12 sm:pt-12 lg:mt-0 lg:pt-0 text-2xl md:text-4xl lg:text-5xl mx-5 md:mx-11">
+            Good design is only half the job. The other half is making sure
+            the right people find it, trust it, and act on it.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-2xl mx-auto px-4">
+      <!-- Bio section -->
+      <div class="mt-52 lg:mt-40">
+        <img
+          class="w-full"
+          alt="Brian Peterson, founder and developer at Walk Studios"
+          src="/Images/Brian.jpg"
+          width="800"
+          height="600"
+          loading="lazy"
+        />
+        <h2 class="text-2xl md:text-4xl mt-4">BRIAN PETERSON</h2>
+        <p class="text-xl text-gray-500 mt-1">Founder | Developer</p>
+        <div class="mt-4 text-lg md:text-xl leading-relaxed space-y-3">
+          <p>
+            Brian holds a B.S. in Computer Science from the University of Memphis
+            and a PMP certification — the technical depth to build complex systems
+            and the discipline to deliver them on schedule.
+          </p>
+          <p>
+            Before Walk Studios, he built TradePathHub, a 2,800+ URL Next.js platform
+            with ISR, a Sanity CMS, an affiliate system, and real organic search
+            traffic — all as a solo build. That's the standard every client project
+            is held to.
+          </p>
+          <p>
+            Walk Studios exists because most small businesses deserve better than
+            a template site that nobody finds. Every project is scoped clearly,
+            built correctly, and delivered with copy and structure that actually
+            converts.
+          </p>
+        </div>
+      </div>
+
+      <!-- Services section -->
+      <div class="mt-12 mb-16">
+        <div class="space-y-12">
+          <div>
+            <h3 class="text-2xl font-semibold">STRATEGY</h3>
+            <div class="bg-black h-1 w-full mt-2 mb-3"></div>
+            <ul class="text-2xl space-y-1">
+              <li>Branding</li>
+              <li>SEO</li>
+              <li>Content Strategy</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-2xl font-semibold">DESIGN</h3>
+            <div class="bg-black h-1 w-full mt-2 mb-3"></div>
+            <ul class="text-2xl space-y-1">
+              <li>Web</li>
+              <li>Graphic</li>
+              <li>UX/UI</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-2xl font-semibold">DEVELOPMENT</h3>
+            <div class="bg-black h-1 w-full mt-2 mb-3"></div>
+            <ul class="text-2xl space-y-1">
+              <li>Web</li>
+              <li>E-commerce Integration</li>
+              <li>CMS Integration</li>
+              <li>Performance & SEO</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-24 flex flex-col items-center text-center px-4">
+      <p class="text-2xl md:text-3xl font-semibold">Ready to build something that works?</p>
+      <a
+        href="/contact"
+        class="mt-6 inline-block bg-walk-red text-white px-6 py-3"
+      >
+        Let's Talk →
+      </a>
+    </div>
+  </div>
+</BaseLayout>

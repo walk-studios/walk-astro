@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Walk Studios | Look to Cook Home Inspections"
+  description="Conversion-focused marketing site for a Little Rock home inspection business — built to rank, earn trust fast, and turn visitors into booked inspections."
+  canonical="/looktocook"
+>
+  <div class="overflow-hidden">
+    <div class="w-screen flex flex-col items-center bg-white">
+      <div class="pt-28 px-6 pb-4 w-full">
+        <a
+          href="/projects"
+          class="text-sm font-medium text-walk-red hover:text-black transition-colors duration-150"
+        >
+          ← All Projects
+        </a>
+      </div>
+      <div class="max-w-[1440px] m-0 sm:mt-4">
+
+        <!-- Hero image -->
+        <div class="flex flex-col">
+          <div>
+            <img
+              class="mx-0 w-full"
+              src="/Images/ltc-hero.webp"
+              width="1270"
+              height="954"
+              alt="Look to Cook Home Inspections website homepage"
+              loading="eager"
+            />
+          </div>
+        </div>
+
+        <!-- Project details -->
+        <div class="bg-white">
+          <div class="flex flex-col md:flex-row mx-4 md:mx-9 pt-4">
+            <div class="flex flex-col md:flex-1">
+              <h1 class="text-5xl md:text-9xl mb-4 mt-5">Look to Cook Home Inspections</h1>
+              <p class="text-2xl sm:text-4xl pt-4 sm:pt-8">
+                Look to Cook Home Inspections provides licensed home
+                inspections across Little Rock and statewide Arkansas, with
+                24-hour report turnaround on every inspection.
+              </p>
+            </div>
+            <div class="md:flex-1 pt-11 sm:pt-0">
+              <div class="flex-1 md:flex md:justify-end sm:mr-11 sm:mt-11 mb-4">
+                <div class="flex flex-col sm:items-center">
+                  <p class="text-3xl md:text-4xl mb-4 font-medium">Services</p>
+                  <p class="text-xl md:text-2xl">Web Design</p>
+                  <p class="text-xl md:text-2xl">Web Development</p>
+                  <p class="text-xl md:text-2xl">Content Strategy</p>
+                  <a
+                    href="https://looktocookhomeinspections.com"
+                    class="mt-6 inline-block w-fit bg-walk-red shadow-md px-3.5 py-2.5 text-center text-lg font-semibold text-white hover:bg-walk-red/70 hover:scale-105 duration-100"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
+                    Look to Cook
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project description -->
+          <div class="py-11 sm:py-20 sm:mt-14 flex flex-col items-center px-6 sm:px-8">
+            <p class="sm:w-2/3 md:pb-4 text-xl sm:text-2xl">
+              Built on Astro for maximum performance and deployed on
+              Netlify — services, pricing, process, about, and online
+              booking, all structured around the specific objections a home
+              buyer has before committing. Copy written collaboratively to
+              lead with the outcome: know exactly what you're buying.
+              24-hour report turnaround as the primary conversion hook.
+            </p>
+            <p class="sm:w-2/3 mt-6 text-sm uppercase tracking-widest text-gray-500">
+              Stack: Astro · Tailwind · Netlify
+            </p>
+          </div>
+        </div>
+
+        <!-- Supporting image -->
+        <div class="bg-gray-100 flex justify-center py-8">
+          <img
+            class="w-2/3"
+            src="/Images/ltc-detail.webp"
+            width="1270"
+            height="973"
+            alt="Look to Cook Home Inspections website detail view"
+            loading="lazy"
+          />
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="max-w-4xl mx-auto px-6 py-16 flex justify-between items-center border-t border-gray-200">
+    <a href="/mscc" class="text-sm font-medium text-gray-500 hover:text-black transition-colors duration-150">
+      ← MSCC
+    </a>
+    <a href="/eva" class="text-sm font-medium text-gray-500 hover:text-black transition-colors duration-150">
+      Eva Beckemyer →
+    </a>
+  </div>
+</BaseLayout>

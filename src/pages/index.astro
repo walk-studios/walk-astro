@@ -1,0 +1,307 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Walk Studios | Memphis Web Design & Development"
+  description="Walk Studios is a boutique creative studio in Memphis, TN. We design and build sites that rank, convert, and grow — web design, development, and branding for businesses that want results."
+  canonical="/"
+>
+  <div class="overflow-hidden mt-24">
+    <div class="h-full max-w-screen mt-8 grid gap-10 grid-cols-1 md:grid-cols-2">
+      <!-- Hero text -->
+      <div class="ml-4 md:mt-16 md:ml-10 hero-animate">
+        <h1 class="text-7xl md:text-8xl md:font-semibold tracking-tight pb-10">
+          Design in Motion
+        </h1>
+        <p class="hero-animate-child ml-1 text-2xl md:text-3xl text-left leading-10 mr-4">
+          Memphis-based web design and development studio. We build sites that
+          get found in search, earn trust on arrival, and turn visitors into clients.
+        </p>
+        <div class="hero-animate-child ml-1 mt-5">
+          <a
+            href="/contact"
+            class="inline-block bg-walk-red shadow-md px-3.5 py-2.5 text-center text-lg font-semibold text-white hover:bg-walk-red/70 hover:scale-105 duration-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+          >
+            Let's Talk
+          </a>
+        </div>
+      </div>
+
+      <!-- Rotating cube -->
+      <div class="container ml-8 flex justify-center pt-24">
+        <div class="cube">
+          <div class="iso top"></div>
+          <div class="iso bottom"></div>
+          <div class="iso left"></div>
+          <div class="iso right"></div>
+          <div class="iso front"></div>
+          <div class="iso back"></div>
+        </div>
+      </div>
+      <br />
+      <div class="md:h-0"></div>
+    </div>
+
+    <br />
+
+    <!-- Projects label -->
+    <div>
+      <p class="flex justify-center text-zinc-600 text-2xl">Projects</p>
+      <br />
+      <p class="mb-20 flex justify-center text-zinc-500 text-7xl font-thin">|</p>
+    </div>
+
+    <!-- Project cards grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mx-4 md:mx-10 my-8">
+
+      <!-- TradePathHub -->
+      <a href="/tradpathhub" class="block w-full max-w-md mx-auto">
+        <div class="bg-slate-100/80 min-w-full min-h-full flex flex-col">
+          <div class="mx-11 pt-5 flex items-center">
+            <p class="text-2xl font-bold">TradePathHub</p>
+            <div class="flex-grow border-b-2 border-black ml-2"></div>
+            <div class="w-11 h-11 bg-black text-white text-2xl flex justify-center items-center ml-2 my-4">T</div>
+          </div>
+          <div class="flex flex-grow justify-center mx-11">
+            <div class="aspect-[4/3] overflow-hidden">
+              <img
+                class="w-full h-full object-cover"
+                src="/Images/tph-hero.webp"
+                alt="TradePathHub salary data platform homepage"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <div class="mx-11 py-6 flex justify-between">
+            <div class="flex-grow border-t-2 border-black">
+              <div class="flex flex-wrap gap-x-3 gap-y-1">
+                <p>Web Development</p>
+                <p>SEO</p>
+                <p>Content Strategy</p>
+              </div>
+            </div>
+            <div class="w-20 bg-black text-white font-bold text-4xl flex justify-center items-center min-h-[50px]">W</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- 767 Agency -->
+      <a href="/767" class="block w-full max-w-md mx-auto">
+        <div class="bg-slate-100/80 min-w-full min-h-full flex flex-col">
+          <div class="mx-11 pt-5 flex items-center">
+            <p class="text-2xl font-bold">767 Agency</p>
+            <div class="flex-grow border-b-2 border-black ml-2"></div>
+            <div class="w-11 h-11 bg-black text-white text-2xl flex justify-center items-center ml-2 my-4">7</div>
+          </div>
+          <div class="flex flex-grow justify-center mx-11">
+            <div class="aspect-[4/3] overflow-hidden">
+              <img
+                class="w-full h-full object-cover"
+                src="/Images/Frame_1.jpg"
+                alt="Multi-panel design layout from the 767 Agency website"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <div class="mx-11 py-6 flex justify-between">
+            <div class="flex-grow border-t-2 border-black">
+              <div class="flex flex-wrap gap-x-3 gap-y-1">
+                <p>Web Design</p>
+                <p>Web Development</p>
+                <p>Logo Design</p>
+              </div>
+            </div>
+            <div class="w-20 bg-black text-white font-bold text-4xl flex justify-center items-center min-h-[50px]">W</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Salo Pallini -->
+      <a href="/salo" class="block w-full max-w-md mx-auto">
+        <div class="bg-slate-100/80 min-w-full min-h-full flex flex-col">
+          <div class="mx-11 pt-5 flex items-center">
+            <p class="text-2xl font-bold">Salo Pallini</p>
+            <div class="flex-grow border-b-2 border-black ml-2"></div>
+            <div class="w-11 h-11 bg-black text-white text-2xl flex justify-center items-center ml-2 my-4">S</div>
+          </div>
+          <div class="flex flex-grow justify-center mx-11">
+            <div class="aspect-[4/3] overflow-hidden">
+              <img
+                class="w-full h-full object-cover"
+                src="/Images/salo-hero.webp"
+                alt="Salo Pallini musician website homepage"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <div class="mx-11 py-6 flex justify-between">
+            <div class="flex-grow border-t-2 border-black">
+              <div class="flex flex-wrap gap-x-3 gap-y-1">
+                <p>Web Design</p>
+                <p>Web Development</p>
+                <p>E-commerce Integration</p>
+              </div>
+            </div>
+            <div class="w-20 bg-black text-white font-bold text-4xl flex justify-center items-center min-h-[50px]">W</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- MSCC -->
+      <a href="/mscc" class="block w-full max-w-md mx-auto">
+        <div class="bg-slate-100/80 min-w-full min-h-full flex flex-col">
+          <div class="mx-11 pt-5 flex items-center">
+            <p class="text-2xl font-bold">MSCC</p>
+            <div class="flex-grow border-b-2 border-black ml-2"></div>
+            <div class="w-11 h-11 bg-black text-white text-2xl flex justify-center items-center ml-2 my-4">M</div>
+          </div>
+          <div class="flex flex-grow justify-center mx-11">
+            <div class="aspect-[4/3] overflow-hidden">
+              <img
+                class="w-full h-full object-cover"
+                src="/Images/mscc-hero.webp"
+                alt="Mid-South Construction Careers website homepage"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <div class="mx-11 py-6 flex justify-between">
+            <div class="flex-grow border-t-2 border-black">
+              <div class="flex flex-wrap gap-x-3 gap-y-1">
+                <p>Web Design</p>
+                <p>Web Development</p>
+              </div>
+            </div>
+            <div class="w-20 bg-black text-white font-bold text-4xl flex justify-center items-center min-h-[50px]">W</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Look to Cook -->
+      <a href="/looktocook" class="block w-full max-w-md mx-auto">
+        <div class="bg-slate-100/80 min-w-full min-h-full flex flex-col">
+          <div class="mx-11 pt-5 flex items-center">
+            <p class="text-2xl font-bold">Look to Cook</p>
+            <div class="flex-grow border-b-2 border-black ml-2"></div>
+            <div class="w-11 h-11 bg-black text-white text-2xl flex justify-center items-center ml-2 my-4">L</div>
+          </div>
+          <div class="flex flex-grow justify-center mx-11">
+            <div class="aspect-[4/3] overflow-hidden">
+              <img
+                class="w-full h-full object-cover"
+                src="/Images/ltc-hero.webp"
+                alt="Look to Cook Home Inspections website homepage"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <div class="mx-11 py-6 flex justify-between">
+            <div class="flex-grow border-t-2 border-black">
+              <div class="flex flex-wrap gap-x-3 gap-y-1">
+                <p>Web Design</p>
+                <p>Web Development</p>
+                <p>Content Strategy</p>
+              </div>
+            </div>
+            <div class="w-20 bg-black text-white font-bold text-4xl flex justify-center items-center min-h-[50px]">W</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Eva Beckemyer -->
+      <a href="/eva" class="block w-full max-w-md mx-auto">
+        <div class="bg-slate-100/80 min-w-full min-h-full flex flex-col">
+          <div class="mx-11 pt-5 flex items-center">
+            <p class="text-2xl font-bold">Eva Beckemyer</p>
+            <div class="flex-grow border-b-2 border-black ml-2"></div>
+            <div class="w-11 h-11 bg-black text-white text-2xl flex justify-center items-center ml-2 my-4">E</div>
+          </div>
+          <div class="flex flex-grow justify-center mx-11">
+            <div class="aspect-[4/3] overflow-hidden">
+              <img
+                class="w-full h-full object-cover"
+                src="/Images/Amoeba-03.jpg"
+                alt="Amoeba painting by artist Eva Beckemyer"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <div class="mx-11 py-6 flex justify-between">
+            <div class="flex-grow border-t-2 border-black">
+              <div class="flex flex-wrap gap-x-3 gap-y-1">
+                <p>Web Design</p>
+                <p>Web Development</p>
+              </div>
+            </div>
+            <div class="w-20 bg-black text-white font-bold text-4xl flex justify-center items-center min-h-[50px]">W</div>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <script>
+    const cubeQuery = document.querySelector('.cube');
+
+    if (cubeQuery instanceof HTMLElement) {
+      const cube: HTMLElement = cubeQuery;
+      let isDragging = false;
+      let startX = 0;
+      let startY = 0;
+      let rotX = 0;
+      let rotY = 0;
+      let currentRotX = 0;
+      let currentRotY = 0;
+      let animFrameId: number | null = null;
+
+      function autoRotate() {
+        if (isDragging) return;
+        rotY += 0.3;
+        rotX += 0.15;
+        cube.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+        animFrameId = requestAnimationFrame(autoRotate);
+      }
+
+      cube.addEventListener('pointerdown', (e) => {
+        isDragging = true;
+        startX = e.clientX;
+        startY = e.clientY;
+        currentRotX = rotX;
+        currentRotY = rotY;
+        cube.setPointerCapture(e.pointerId);
+        cube.style.cursor = 'grabbing';
+        if (animFrameId) cancelAnimationFrame(animFrameId);
+        e.preventDefault();
+      });
+
+      cube.addEventListener('pointermove', (e) => {
+        if (!isDragging) return;
+        const deltaX = e.clientX - startX;
+        const deltaY = e.clientY - startY;
+        rotY = currentRotY + deltaX * 0.5;
+        rotX = currentRotX - deltaY * 0.5;
+        cube.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+      });
+
+      cube.addEventListener('pointerup', () => {
+        isDragging = false;
+        cube.style.cursor = 'grab';
+        autoRotate();
+      });
+
+      cube.addEventListener('pointercancel', () => {
+        isDragging = false;
+        cube.style.cursor = 'grab';
+        autoRotate();
+      });
+
+      // Remove CSS animation entirely — JS handles all rotation
+      cube.style.animation = 'none';
+
+      // Start auto-rotation on load
+      autoRotate();
+    }
+  </script>
+</BaseLayout>
