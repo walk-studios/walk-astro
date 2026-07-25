@@ -250,58 +250,108 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       let isDragging = false;
       let startX = 0;
       let startY = 0;
-      let rotX = 0;
+      let rotX = 20;
       let rotY = 0;
-      let currentRotX = 0;
+      let currentRotX = 20;
       let currentRotY = 0;
+      let velX = 0;
+      let velY = 0;
       let animFrameId: number | null = null;
+      let autoVelX = 0.3;
+      let autoVelY = 0.1;
 
-      function autoRotate() {
-        if (isDragging) return;
-        rotY += 0.3;
-        rotX += 0.15;
-        cube.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg)`;
-        animFrameId = requestAnimationFrame(autoRotate);
+      // Rolling velocity buffer — averages last N frames for stable flick detection
+      const VEL_BUFFER = 5;
+      const velHistX: number[] = [];
+      const velHistY: number[] = [];
+      let lastX = 0;
+      let lastY = 0;
+
+      const DRAG_SENSITIVITY = 0.35;
+      const AUTO_SPEED_Y = 0.3;
+      const AUTO_SPEED_X = 0.1;
+      const FRICTION = 0.96;        // higher = coasts longer
+      const FLICK_MULTIPLIER = 1.8; // amplifies recorded velocity on release
+
+      function avgVel(buf: number[]) {
+        if (buf.length === 0) return 0;
+        return buf.reduce((a, b) => a + b, 0) / buf.length;
+      }
+
+      function animate() {
+        if (!isDragging) {
+          if (Math.abs(velX) > 0.08 || Math.abs(velY) > 0.08) {
+            rotY += velX;
+            rotX -= velY;
+            velX *= FRICTION;
+            velY *= FRICTION;
+          } else {
+            velX = 0;
+            velY = 0;
+            rotY += autoVelX;
+            rotX += autoVelY;
+          }
+          cube.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+        }
+        animFrameId = requestAnimationFrame(animate);
+      }
+
+      function releaseGrab() {
+        if (!isDragging) return;
+        isDragging = false;
+        cube.style.cursor = 'grab';
+        velX = avgVel(velHistX) * FLICK_MULTIPLIER;
+        velY = avgVel(velHistY) * FLICK_MULTIPLIER;
+        // carry direction into auto-rotate
+        if (Math.abs(velX) > 0.01) autoVelX = Math.sign(velX) * AUTO_SPEED_Y;
+        if (Math.abs(velY) > 0.01) autoVelY = Math.sign(velY) * AUTO_SPEED_X;
+        velHistX.length = 0;
+        velHistY.length = 0;
       }
 
       cube.addEventListener('pointerdown', (e) => {
         isDragging = true;
         startX = e.clientX;
         startY = e.clientY;
+        lastX = e.clientX;
+        lastY = e.clientY;
         currentRotX = rotX;
         currentRotY = rotY;
+        velX = 0;
+        velY = 0;
+        velHistX.length = 0;
+        velHistY.length = 0;
         cube.setPointerCapture(e.pointerId);
         cube.style.cursor = 'grabbing';
-        if (animFrameId) cancelAnimationFrame(animFrameId);
         e.preventDefault();
       });
 
       cube.addEventListener('pointermove', (e) => {
         if (!isDragging) return;
+        const dx = (e.clientX - lastX) * DRAG_SENSITIVITY;
+        const dy = (e.clientY - lastY) * DRAG_SENSITIVITY;
+        lastX = e.clientX;
+        lastY = e.clientY;
+
+        // Rolling buffer
+        velHistX.push(dx);
+        velHistY.push(dy);
+        if (velHistX.length > VEL_BUFFER) velHistX.shift();
+        if (velHistY.length > VEL_BUFFER) velHistY.shift();
+
         const deltaX = e.clientX - startX;
         const deltaY = e.clientY - startY;
-        rotY = currentRotY + deltaX * 0.5;
-        rotX = currentRotX - deltaY * 0.5;
+        rotY = currentRotY + deltaX * DRAG_SENSITIVITY;
+        rotX = currentRotX - deltaY * DRAG_SENSITIVITY;
         cube.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg)`;
       });
 
-      cube.addEventListener('pointerup', () => {
-        isDragging = false;
-        cube.style.cursor = 'grab';
-        autoRotate();
-      });
+      cube.addEventListener('pointerup', releaseGrab);
+      cube.addEventListener('pointercancel', releaseGrab);
+      cube.addEventListener('lostpointercapture', releaseGrab);
 
-      cube.addEventListener('pointercancel', () => {
-        isDragging = false;
-        cube.style.cursor = 'grab';
-        autoRotate();
-      });
-
-      // Remove CSS animation entirely — JS handles all rotation
       cube.style.animation = 'none';
-
-      // Start auto-rotation on load
-      autoRotate();
+      animFrameId = requestAnimationFrame(animate);
     }
   </script>
 </BaseLayout>
