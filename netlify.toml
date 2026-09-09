@@ -9,6 +9,13 @@
   status = 301
   force = true
 
+# Fix misspelled TradePathHub slug
+[[redirects]]
+  from = "/tradpathhub"
+  to = "/tradepathhub"
+  status = 301
+  force = true
+
 # Netlify Forms success redirect
 [[redirects]]
   from = "/contact"
