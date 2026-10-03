@@ -17,9 +17,9 @@ const {
   darkNav = false,
 } = Astro.props;
 
-const canonicalURL = canonical
-  ? `https://walkstudios.com${canonical}`
-  : `https://walkstudios.com${Astro.url.pathname}`;
+// Netlify 301s /about → /about/, so canonicals must end in a slash
+const canonicalPath = (canonical ?? Astro.url.pathname).replace(/\/?$/, "/");
+const canonicalURL = `https://walkstudios.com${canonicalPath}`;
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
